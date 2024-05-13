@@ -28,7 +28,7 @@ export class HomeComponent {
   }
 
   loadProducts() {
-    this.productService.getProductsSkinCare().subscribe((res: any) => {
+    this.productService.getProducts().subscribe((res: any) => {
       this.products = (res.products || []).map((item: any) => ({
         id: item.id,
         title: item.title,
@@ -39,6 +39,17 @@ export class HomeComponent {
       }));
       console.log(this.products);
     });
+  }
+
+  selectedProduct: any;
+
+  openModal(product: any) {
+    this.selectedProduct = product;
+    const modal = document.getElementById('myModal');
+  }
+
+  closeModal() {
+    const modal = document.getElementById('myModal');
   }
 
   search: string = "";

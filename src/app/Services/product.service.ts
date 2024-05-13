@@ -8,8 +8,8 @@ export class ProductService {
   constructor(private http: HttpClient) {}
   
   // método de obtenção dos produtos
-  getProductsSkinCare() {
-    const url = 'https://dummyjson.com/products';
+  getProducts() {
+    const url = 'https://dummyjson.com/products/category/laptops';
     return this.http.get(url);
   }
 }

@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   getProduct() {
-    this.productService.getProductsSkinCare().subscribe((data: any) => {
+    this.productService.getProducts().subscribe((data: any) => {
       this.productData = data;
       console.log(this.productData);
     })

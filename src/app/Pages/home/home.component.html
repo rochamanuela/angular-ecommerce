@@ -25,15 +25,31 @@
 </div>
 
 <div class="container-main">
-	<div class="products">
-		<div *ngFor="let product of products" class="product-item">
-			<img [src]="product.thumbnail" alt="Product Thumbnail">
-			<div class="text">
-				<p class="product-title">{{ product.title }}</p>
-				<p class="product-brand">{{ product.brand }}</p>
-				<p class="product-price">R$ {{ product.price }},00</p>
-				<button class="btn-details">Mais detalhes</button>
+	<div class="products-container">
+		<div class="products">
+			<div *ngFor="let product of products" class="product-item">
+				<img [src]="product.thumbnail" alt="Product Thumbnail">
+				<div class="text">
+					<p class="product-title">{{ product.title }}</p>
+					<p class="product-brand">{{ product.brand }}</p>
+					<p class="product-price">R$ {{ product.price }},00</p>
+					<button class="btn-details" (click)="openModal(product)">Mais detalhes</button>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <img [src]="selectedProduct?.thumbnail" alt="Product Thumbnail">
+        <div class="text">
+            <p class="product-title">{{ selectedProduct?.title }}</p>
+            <p class="product-brand">{{ selectedProduct?.brand }}</p>
+            <p class="product-price">R$ {{ selectedProduct?.price }},00</p>
+            <!-- Add more details here if needed -->
+        </div>
+    </div>
 </div>

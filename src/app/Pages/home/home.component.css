@@ -13,6 +13,12 @@ p {
     font-family: "Reddit Sans", sans-serif;
 }
 
+.products-container {
+    display: grid;
+    height: 90vh;
+    place-items: center;
+}
+
 .products {
     display: flex;
     flex-direction: row;
@@ -29,10 +35,10 @@ p {
 }
 
 .product-item {
-    width: calc(100% / 6 - 30px); /* 30px é a largura do gap */
+    width: calc(100% / 5 - 30px); /* 30px é a largura do gap */
 }
 
-.product-item:nth-child(6n + 1) {
+.product-item:nth-child(5n + 1) {
     clear: left;
 }
 
@@ -45,7 +51,7 @@ p {
 
 .product-item img {
     width: 100%; /* ou qualquer outra largura fixa desejada */
-    height: 200px;
+    height: 150px;
     margin-bottom: 17px;
     object-fit: cover;
 }
@@ -85,4 +91,43 @@ p {
 .btn-details:hover {
     background-color: rgb(0, 124, 146);
     color: white;
+}
+
+/* teste  */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
