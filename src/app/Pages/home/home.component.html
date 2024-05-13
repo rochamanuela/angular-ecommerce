@@ -1,0 +1,39 @@
+<!-- <div class="container-main">
+	<div class="container-child">
+		<div *ngFor="let product of products" class="product-item">
+			<p class="font-poppins">ID: {{ product.id }}</p>
+			<p class="font-poppins">Title: {{ product.title }}</p>
+			<p class="font-poppins">Description: {{ product.description }}</p>
+			<p class="font-poppins">Price: {{ product.price }}</p>
+			<p class="font-poppins">Brand: {{ product.brand }}</p>
+			<img [src]="product.thumbnail" alt="Product Thumbnail">
+		</div>
+	</div>
+</div> -->
+
+<div class="navbar">
+	<p class="logo">SkinCare</p>
+
+	<!-- <div class="form">
+		<input type="text" [(ngModel)]="search" placeholder="Pesquise por produto" />
+		<button type="submit" (click)="onSubmit()">
+			<span class="material-symbols-outlined">
+				search
+			</span>
+		</button>
+	</div> -->
+</div>
+
+<div class="container-main">
+	<div class="products">
+		<div *ngFor="let product of products" class="product-item">
+			<img [src]="product.thumbnail" alt="Product Thumbnail">
+			<div class="text">
+				<p class="product-title">{{ product.title }}</p>
+				<p class="product-brand">{{ product.brand }}</p>
+				<p class="product-price">R$ {{ product.price }},00</p>
+				<button class="btn-details">Mais detalhes</button>
+			</div>
+		</div>
+	</div>
+</div>
