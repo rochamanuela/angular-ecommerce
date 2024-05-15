@@ -3,11 +3,8 @@ import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
-  ReactiveFormsModule,
-  Validators,
 } from "@angular/forms"
 import { CommonModule } from '@angular/common';
-import { Console } from 'node:console';
 import { ProductInterface } from '../../Interfaces/product-interface';
 
 @Component({
@@ -46,10 +43,16 @@ export class HomeComponent {
   openModal(product: any) {
     this.selectedProduct = product;
     const modal = document.getElementById('myModal');
+    if (modal) {
+      modal.style.display = 'block';
+    }
   }
 
   closeModal() {
     const modal = document.getElementById('myModal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
   }
 
   search: string = "";
